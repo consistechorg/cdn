@@ -142,6 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--gh-font-heading, var(--font-sans));
 }
 
+
 a {
     color: var(--color-darker-gray);
     text-decoration: none;
@@ -150,6 +151,7 @@ a {
 a:hover {
     opacity: 0.8;
 }
+
 
 .gh-button {
     display: inline-flex;
