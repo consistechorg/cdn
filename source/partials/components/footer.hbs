@@ -8,7 +8,7 @@
                 align-items: center;
                 text-align: center;
                 width: 100%;
-                gap: 0.6em; /* consistent vertical spacing between elements */
+                gap: 0.6em;
                 line-height: 1.6;
             }
 
@@ -24,8 +24,14 @@
                 outline: none;
             }
 
-            .footer-links {
-                /* Use default site font size */
+            /* Unified font size for all footer link rows */
+            .footer-links,
+            .footer-links-secondary {
+                font-size: inherit;
+            }
+
+            .footer-links-secondary {
+                opacity: 0.9; /* only slight transparency, same font size */
             }
 
             .footer-social {
@@ -36,7 +42,7 @@
             }
 
             .footer-social a {
-                font-size: 0 !important; /* hide text, rely on icons */
+                font-size: 0 !important;
             }
 
             .footer-social a::before {
@@ -55,14 +61,16 @@
                 color: #1155CC;
             }
 
-            .footer-social .nav-mastodon a::before { content: "\f4f6"; }
-            .footer-social .nav-facebook a::before { content: "\f09a"; }
-            .footer-social .nav-instagram a::before { content: "\f16d"; }
             .footer-social .nav-linkedin a::before { content: "\f08c"; }
+            .footer-social .nav-facebook a::before { content: "\f09a"; }
+            .footer-social .nav-youtube a::before { content: "\f167"; }
             .footer-social .nav-x a::before { content: "\e61b"; }
+            .footer-social .nav-instagram a::before { content: "\f16d"; }
             .footer-social .nav-tiktok a::before { content: "\e07b"; }
             .footer-social .nav-pinterest a::before { content: "\f0d2"; }
-            .footer-social .nav-youtube a::before { content: "\f167"; }
+            .footer-social .nav-threads a::before { content: "\e618"; }
+            .footer-social .nav-bluesky a::before { content: "\e671"; }
+            .footer-social .nav-mastodon a::before { content: "\f4f6"; }
 
             .gh-footer-logo {
                 margin-top: 0.4em;
@@ -87,25 +95,21 @@
 
             <nav class="footer-links">
                 <a href="https://consistech.org/terms-of-service/">Terms</a> · 
-                <a href="https://consistech.org/privacy-policy/">Privacy</a> ·
+                <a href="https://consistech.org/privacy-policy/">Privacy</a> · 
                 <a href="https://consistech.org/cookies-policy/">Cookies</a> · 
                 <a href="https://consistech.org/contact/">Contact</a> · 
-                <a href="https://consistech.org/donate/">Donate</a>
+                <a href="https://consistech.org/support/">Support</a>
             </nav>
 
-            <div class="footer-social">
-                <span class="nav-linkedin"><a href="https://linkedin.com/company/consistechorg" target="_blank" rel="noopener">LinkedIn</a></span>
-                <span class="nav-facebook"><a href="https://facebook.com/consistechorg" target="_blank" rel="noopener">Facebook</a></span>
-                <span class="nav-youtube"><a href="https://youtube.com/@consistechorg" target="_blank" rel="noopener">YouTube</a></span>
-                <span class="nav-x"><a href="https://x.com/consistechorg" target="_blank" rel="noopener">X</a></span>
-                <span class="nav-instagram"><a href="https://instagram.com/consistechorg" target="_blank" rel="noopener">Instagram</a></span>
-                <span class="nav-tiktok"><a href="https://tiktok.com/@consistechorg" target="_blank" rel="noopener">TikTok</a></span>
-                <span class="nav-mastodon"><a href="https://mastodon.social/@consistechorg" target="_blank" rel="noopener">Mastodon</a></span>
-            </div>
+            <nav class="footer-links-secondary">
+                <a href="https://consistech.org/accessibility/">Accessibility</a> · 
+                <a href="https://consistech.org/authenticity/">Authenticity</a> · 
+                <a href="https://status.consistech.org">Availability</a>
+            </nav>
 
             <div class="gh-footer-site">
-                <a href="https://consistech.org/">
-                    Copyright © 2025<span id="current-year-end"></span>
+                <a href="">
+                    © CONSISTECH 2025<span id="current-year-end"></span> · v1.5.2
                 </a>
             </div>
 
@@ -120,6 +124,17 @@
                 }
             });
             </script>
+
+            <div class="footer-social">
+                <span class="nav-linkedin"><a href="https://linkedin.com/company/consistechorg" target="_blank" rel="noopener">LinkedIn</a></span>
+                <span class="nav-facebook"><a href="https://facebook.com/consistechorg" target="_blank" rel="noopener">Facebook</a></span>
+                <span class="nav-youtube"><a href="https://youtube.com/@consistechorg" target="_blank" rel="noopener">YouTube</a></span>
+                <span class="nav-x"><a href="https://x.com/consistechorg" target="_blank" rel="noopener">X</a></span>
+                <span class="nav-instagram"><a href="https://instagram.com/consistechorg" target="_blank" rel="noopener">Instagram</a></span>
+                <span class="nav-tiktok"><a href="https://tiktok.com/@consistechorg" target="_blank" rel="noopener">TikTok</a></span>
+                <span class="nav-pinterest"><a href="https://www.pinterest.com/consistechorg" target="_blank" rel="noopener">Pinterest</a></span>
+                <span class="nav-mastodon"><a href="https://mastodon.social/@consistechorg" target="_blank" rel="noopener">Mastodon</a></span>
+            </div>
 
             <a href="https://consistech.org/" class="gh-footer-logo is-title">
                 {{#if @site.logo}}
